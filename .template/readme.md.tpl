@@ -19,7 +19,7 @@
 
 {{APP_DESC}}
 
-![screenshots](https://github.com/quicklyon/-docker/raw/main/.template/screenshot.png)
+![screenshots](https://raw.githubusercontent.com/quicklyon/{{app_name}}-docker/main/.template/screenshot.png)
 
 {{APP_NAME}}官网：[{{APP_HOME}}]({{APP_HOME}})
 
