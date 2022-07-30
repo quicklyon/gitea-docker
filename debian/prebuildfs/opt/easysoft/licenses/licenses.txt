@@ -1,0 +1,2 @@
+Easysoft QuickOn containers ship with software bundles. You can find the licenses under:
+/opt/[app-name]/licenses/COPYING.txt

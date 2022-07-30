@@ -1,0 +1,16 @@
+{
+    "Name": "Gitea",
+    "Version": "1.16.9",
+    "Home": "https://gitea.io/",
+    "Maintainer": "zhouyq zhouyueqiu@easycorp.ltd",
+    "GitUrl": "https://github.com/go-gitea/gitea",
+    "DockerfileUrl": "https://github.com/quicklyon/gitea-docker",
+    "InstallDocUrl": "https://www.qucheng.com/app-install/install-gitea-<number>.html",
+    "Docker": {
+        "Name": "gitea",
+        "OS": "debian-11",
+        "ImageOS": "debian:11.4-slim",
+        "Repo": "https://hub.docker.com/r/easysoft/gitea",
+        "TagUrl": "https://hub.docker.com/r/easysoft/gitea/tags/"
+    }
+}

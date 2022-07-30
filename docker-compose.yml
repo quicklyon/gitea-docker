@@ -1,0 +1,46 @@
+version: '2'
+
+networks:
+  net:
+    driver: bridge
+
+services:
+  mysql:
+    image: mysql:5.7
+    container_name: mysql
+    ports:
+      - '3307:3306'
+    volumes:
+      - 'db:/var/lib/mysql'
+    environment:
+      - MYSQL_ROOT_PASSWORD=pass4Quick0n
+      - MYSQL_DATABASE=gitea
+    networks:
+      - net
+
+  gitea:
+    image: hub.qucheng.com/app/gitea:${TAG}
+    container_name: gitea
+    ports:
+      - '8080:3000'
+    volumes:
+      - 'data:/data'
+    depends_on:
+      - mysql
+    environment:
+      - MYSQL_HOST=mysql
+      - MYSQL_PORT=3306
+      - MYSQL_USER=root
+      - MYSQL_PASSWORD=pass4Quick0n
+      - MYSQL_DB=gitea
+      - DEBUG=1
+      - IS_CONTAINER=true
+    networks:
+      - net
+
+# persistence
+volumes:
+  db:
+    driver: local
+  data:
+    driver: local

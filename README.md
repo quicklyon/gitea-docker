@@ -1,0 +1,153 @@
+<!-- 该文档是模板生成，手动修改的内容会被覆盖，详情参见：https://github.com/quicklyon/template-toolkit -->
+# QuickOn Gitea 应用镜像
+
+![GitHub Workflow Status (event)](https://img.shields.io/github/workflow/status/quicklyon/gitea-docker/build?style=flat-square)
+![Docker Pulls](https://img.shields.io/docker/pulls/easysoft/gitea?style=flat-square)
+![Docker Image Size](https://img.shields.io/docker/image-size/easysoft/gitea?style=flat-square)
+![GitHub tag](https://img.shields.io/github/v/tag/quicklyon/gitea-docker?style=flat-square)
+
+> 申明: 该软件镜像是由QuickOn打包的。在发行中提及的各自商标由各自的公司或个人所有，使用它们并不意味着任何从属关系。
+
+## 快速参考
+
+- 通过 [渠成软件百宝箱](https://www.qucheng.com/app-install/install-gitea-<number>.html) 一键安装 **Gitea**
+- [Dockerfile 源码](https://github.com/quicklyon/gitea-docker)
+- [Gitea 源码](https://github.com/go-gitea/gitea)
+- [Gitea 官网](https://gitea.io/)
+
+## 一、关于 Gitea
+
+<!-- 这里写应用的【介绍信息】 -->
+Gitea 是一个自己托管的Git服务程序。他和GitHub, Bitbucket or Gitlab等比较类似。他是从 Gogs 发展而来，不过我们已经Fork并且命名为Gitea。对于我们Fork的原因可以看 [这里](https://blog.gitea.io/2016/12/welcome-to-gitea/)。
+
+![screenshots](https://github.com/quicklyon/gitea-docker/raw/master/.template/screenshot.png)
+
+Gitea官网：[https://gitea.io/](https://gitea.io/)
+
+<!-- 这里写应用的【附加信息】 -->
+### 目标
+
+Gitea的首要目标是创建一个极易安装，运行非常快速，安装和使用体验良好的自建 Git 服务。我们采用Go作为后端语言，这使我们只要生成一个可执行程序即可。并且他还支持跨平台，支持 Linux, macOS 和 Windows 以及各种架构，除了x86，amd64，还包括 ARM 和 PowerPC。
+
+### 功能特性
+
+- 支持活动时间线
+- 支持 SSH 以及 HTTP/HTTPS 协议
+- 支持 SMTP、LDAP 和反向代理的用户认证
+- 支持反向代理子路径
+- 支持用户、组织和仓库管理系统
+- 支持添加和删除仓库协作者
+- 支持仓库和组织级别 Web 钩子（包括 Slack 集成）
+- 支持仓库 Git 钩子和部署密钥
+- 支持仓库工单（Issue）、合并请求（Pull Request）以及 Wiki
+- 支持迁移和镜像仓库以及它的 Wiki
+- 支持在线编辑仓库文件和 Wiki
+- 支持自定义源的 Gravatar 和 Federated Avatar
+- 支持邮件服务
+- 支持后台管理面板
+- 支持 MySQL、PostgreSQL、SQLite3、MSSQL 和 TiDB(MySQL) 数据库
+- 支持多语言本地化（21 种语言）
+- 支持软件包注册中心（Composer/Conan/Container/Generic/Helm/Maven/NPM/Nuget/PyPI/RubyGems）
+
+### 系统要求
+
+- 最低的系统硬件要求为一个廉价的树莓派
+- 如果用于团队项目，建议使用 2 核 CPU 及 1GB 内存
+
+### 浏览器支持
+
+Chrome, Firefox, Safari, Edge
+
+## 二、支持的版本(Tag)
+
+由于版本比较多,这里只列出最新的5个版本,更详细的版本列表请参考:[可用版本列表](https://hub.docker.com/r/easysoft/gitea/tags/)
+
+<!-- 这里是应用的【Tag】信息，通过命令维护，详情参考：https://github.com/quicklyon/template-toolkit -->
+- [latest](https://github.com/go-gitea/gitea/releases/tag/v1.16.9)
+- [1.16.9](https://github.com/go-gitea/gitea/releases/tag/v1.16.9)
+
+## 三、获取镜像
+
+推荐从 [Docker Hub Registry](https://hub.docker.com/r/easysoft/gitea) 拉取我们构建好的官方Docker镜像。
+
+```bash
+docker pull easysoft/gitea:latest
+```
+
+如需使用指定的版本,可以拉取一个包含版本标签的镜像,在Docker Hub仓库中查看 [可用版本列表](https://hub.docker.com/r/easysoft/gitea/tags/)
+
+```bash
+docker pull easysoft/gitea:[TAG]
+```
+
+## 四、持久化数据
+
+如果你删除容器，所有的数据都将被删除，下次运行镜像时会重新初始化数据。为了避免数据丢失，你应该为容器提供一个挂在卷，这样可以将数据进行持久化存储。
+
+为了数据持久化，你应该挂载持久化目录：
+
+- /data 持久化数据
+
+如果挂载的目录为空，首次启动会自动初始化相关文件
+
+```bash
+$ docker run -it \
+    -v $PWD/data:/data \
+docker pull easysoft/gitea:latest
+```
+
+或者修改 docker-compose.yml 文件，添加持久化目录配置
+
+```bash
+services:
+  Gitea:
+  ...
+    volumes:
+      - /path/to/persistence:/data
+  ...
+```
+
+## 五、环境变量
+
+<!-- 这里写应用的【环境变量信息】 -->
+
+<!-- 示例：
+
+| 变量名           | 默认值        | 说明                             |
+| ---------------- | ------------- | -------------------------------- |
+| EASYSOFT_DEBUG   | false         | 是否打开调试信息，默认关闭       |
+| MYSQL_HOST       | 127.0.0.1     | MySQL 主机地址                   |
+| MYSQL_PORT       | 3306          | MySQL 端口                       |
+| MYSQL_DB         | spug          | spug 数据库名称                 |
+| MYSQL_USER       | root          | MySQL 用户名                      |
+| MYSQL_PASSWORD   | pass4Spug     | MySQL 密码                        |
+| REDIS_HOST       | 127.0.0.1     | Redis 服务地址 |
+| REDIS_PORT       | 6379          | Redis 端口 |
+| DEFAULT_ADMIN_USER| admin        | 默认管理员名称             |
+| DEFAULT_ADMIN_PASSWORD | spug.dev | 默认管理员密码 |
+
+-->
+
+## 六、运行
+
+### 6.1 单机Docker-compose方式运行
+
+```bash
+# 启动服务
+make run
+
+# 查看服务状态
+make ps
+
+# 查看服务日志
+docker-compose logs -f gogs
+
+```
+
+<!-- 这里写应用的【make命令的备注信息】位于文档最后端 -->
+**说明:**
+
+- 启动成功后，打开浏览器输入 `http://<你的IP>:8080` 访问管理后台
+- 默认用户名：`gitea`，默认密码：`pass4Gitea`
+- [VERSION](https://github.com/quicklyon/gitea-docker/blob/main/VERSION) 文件中详细的定义了Makefile可以操作的版本。
+- [docker-compose.yml](https://github.com/quicklyon/gitea-docker/blob/main/docker-compose.yml)。

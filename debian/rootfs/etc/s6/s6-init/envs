@@ -1,0 +1,39 @@
+#!/bin/bash
+
+#===========#
+#  Gitea    #
+#===========#
+export APP_DOMAIN=${APP_DOMAIN:-gitea.demo.haogs.cn}
+export DEFAULT_ADMIN_USERNAME=${DEFAULT_ADMIN_USERNAME:-gitea}
+export DEFAULT_ADMIN_PASSWORD=${DEFAULT_ADMIN_PASSWORD:-pass4Gitea}
+export GITEA_ADMIN_EMAIL=${GITEA_ADMIN_EMAIL:-admin@demo.com}
+GITEA_SECRET_KEY="$(gitea generate secret SECRET_KEY)"
+GITEA_LFS_JWT_SECRET="$(gitea generate secret LFS_JWT_SECRET)"
+export GITEA_SECRET_KEY
+export GITEA_LFS_JWT_SECRET
+
+#===========#
+#   MySQL   #
+#===========#
+export MYSQL_HOST=${MYSQL_HOST:-127.0.0.1}
+export MYSQL_PORT=${MYSQL_PORT:-3306}
+export MYSQL_DB=${MYSQL_DB:-zentao}
+export MYSQL_USER=${MYSQL_USER:-root}
+export MYSQL_PASSWORD=${MYSQL_PASSWORD:-pass4Zentao}
+
+
+# ======================#
+# Persistence directory #
+#=======================#
+export PHP_PERSISTENCE_LIST=(
+"/data"
+"/data/lfs"
+"/data/git"
+"/data/avatars"
+"/data/attachments"
+"/data/sessions"
+"/data/log"
+"/data/repo"
+"/data/repo-avatars"
+"/data/tmp/local-repo"
+"/data/tmp/uploads")
