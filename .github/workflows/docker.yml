@@ -28,7 +28,7 @@ jobs:
         password: ${{ secrets.TCR_PASS }}
     - name: Build and push
       run: |
-        make build
+        make build-public
         make push-public
     - name: Update repo description
       uses: peter-evans/dockerhub-description@v3
