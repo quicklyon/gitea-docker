@@ -6,7 +6,7 @@
 ![Docker Image Size](https://img.shields.io/docker/image-size/easysoft/gitea?style=flat-square)
 ![GitHub tag](https://img.shields.io/github/v/tag/quicklyon/gitea-docker?style=flat-square)
 
-> 申明: 该软件镜像是由QuickOn打包的。在发行中提及的各自商标由各自的公司或个人所有，使用它们并不意味着任何从属关系。
+> 申明: 该软件镜像是由QuickOn打包。在发行中提及的各自商标由各自的公司或个人所有，使用它们并不意味着任何从属关系。
 
 ## 快速参考
 
@@ -64,7 +64,7 @@ Chrome, Firefox, Safari, Edge
 
 <!-- 这里是应用的【Tag】信息，通过命令维护，详情参考：https://github.com/quicklyon/template-toolkit -->
 - [latest](https://github.com/go-gitea/gitea/releases/tag/v1.16.9)
-- [1.16.9](https://github.com/go-gitea/gitea/releases/tag/v1.16.9)
+- [1.16.9-20220730](https://github.com/go-gitea/gitea/releases/tag/v1.16.9)
 
 ## 三、获取镜像
 
@@ -110,23 +110,18 @@ services:
 ## 五、环境变量
 
 <!-- 这里写应用的【环境变量信息】 -->
-
-<!-- 示例：
-
 | 变量名           | 默认值        | 说明                             |
 | ---------------- | ------------- | -------------------------------- |
 | EASYSOFT_DEBUG   | false         | 是否打开调试信息，默认关闭       |
+| APP_DOMAIN       | gitea.demo.haogs.cn | Gitea域名,影响仓库的地址 |
 | MYSQL_HOST       | 127.0.0.1     | MySQL 主机地址                   |
 | MYSQL_PORT       | 3306          | MySQL 端口                       |
-| MYSQL_DB         | spug          | spug 数据库名称                 |
+| MYSQL_DB         | gitea          | spug 数据库名称                 |
 | MYSQL_USER       | root          | MySQL 用户名                      |
-| MYSQL_PASSWORD   | pass4Spug     | MySQL 密码                        |
-| REDIS_HOST       | 127.0.0.1     | Redis 服务地址 |
-| REDIS_PORT       | 6379          | Redis 端口 |
-| DEFAULT_ADMIN_USER| admin        | 默认管理员名称             |
-| DEFAULT_ADMIN_PASSWORD | spug.dev | 默认管理员密码 |
-
--->
+| MYSQL_PASSWORD   | pass4QuickOn  | MySQL 密码                        |
+| DEFAULT_ADMIN_USER| gitea        | 默认管理员名称             |
+| DEFAULT_ADMIN_PASSWORD | pass4Gitea | 默认管理员密码 |
+| GITEA_ADMIN_EMAIL | admin@demo.com | 管理员邮箱地址|
 
 ## 六、运行
 
@@ -140,7 +135,7 @@ make run
 make ps
 
 # 查看服务日志
-docker-compose logs -f gogs
+docker-compose logs -f gitea
 
 ```
 

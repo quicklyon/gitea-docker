@@ -17,9 +17,9 @@ export GITEA_LFS_JWT_SECRET
 #===========#
 export MYSQL_HOST=${MYSQL_HOST:-127.0.0.1}
 export MYSQL_PORT=${MYSQL_PORT:-3306}
-export MYSQL_DB=${MYSQL_DB:-zentao}
+export MYSQL_DB=${MYSQL_DB:-gitea}
 export MYSQL_USER=${MYSQL_USER:-root}
-export MYSQL_PASSWORD=${MYSQL_PASSWORD:-pass4Zentao}
+export MYSQL_PASSWORD=${MYSQL_PASSWORD:-pass4QuickOn}
 
 
 # ======================#

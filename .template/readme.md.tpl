@@ -6,7 +6,7 @@
 ![Docker Image Size](https://img.shields.io/docker/image-size/easysoft/{{app_name}}?style=flat-square)
 ![GitHub tag](https://img.shields.io/github/v/tag/quicklyon/{{app_name}}-docker?style=flat-square)
 
-> 申明: 该软件镜像是由QuickOn打包的。在发行中提及的各自商标由各自的公司或个人所有，使用它们并不意味着任何从属关系。
+> 申明: 该软件镜像是由QuickOn打包。在发行中提及的各自商标由各自的公司或个人所有，使用它们并不意味着任何从属关系。
 
 ## 快速参考
 
