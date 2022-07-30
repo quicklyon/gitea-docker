@@ -13,7 +13,7 @@ ENV TZ=Asia/Shanghai
 ARG IS_CHINA="true"
 ENV MIRROR=${IS_CHINA}
 
-RUN install_packages curl wget zip unzip s6 pwgen git cron procps libedit2 \
+RUN install_packages curl wget zip unzip s6 pwgen git upx xz-utils cron procps libedit2 \
     && groupadd -g 1024 git \
     && useradd -u 1024 -g 1024 -s /usr/sbin/nologin -d /data/git -M git
 

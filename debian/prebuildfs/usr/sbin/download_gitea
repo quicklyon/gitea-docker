@@ -13,6 +13,7 @@ if [ "$MIRROR" == "false" ];then
     directory="/apps/gitea/bin"
 
     echo "Downloading gitea package"
+    [ ! -d $directory ] && mkdir -pv $directory
     curl -L -k --output $directory/gitea --silent --show-error --fail  "${GITEA_URL}/${base_name}"
 
     package_sha256=$(curl -L -k -s "${GITEA_URL}/${base_name}.sha256" | awk '{print $1}')
@@ -21,6 +22,8 @@ if [ "$MIRROR" == "false" ];then
         echo "Verifying package integrity"
         echo "$package_sha256  $directory/gitea" | sha256sum -c - || exit "$?"
     fi
+    chmod +x /apps/gitea/bin/gitea
+    upx -9 /apps/gitea/bin/gitea
 else
     APP_SHA256="$(curl -k -s -L $COS_URL/gitea-"${VERSION}"-"${OS_NAME}"-"${OS_ARCH}".tar.gz.sha256 | awk '{print $1}')"
     . /opt/easysoft/scripts/libcomponent.sh && component_unpack "gitea" "${VERSION}" -c "${APP_SHA256}"

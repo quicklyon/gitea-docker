@@ -32,6 +32,10 @@ services:
       - MYSQL_PORT=3306
       - MYSQL_USER=root
       - MYSQL_PASSWORD=pass4Quick0n
+      - DEFAULT_ADMIN_USERNAME=gitea
+      - DEFAULT_ADMIN_PASSWORD=pass4Gitea
+      - GITEA_ADMIN_EMAIL=you@email.com
+      - APP_DOMAIN=http://type.your.domain.com
       - MYSQL_DB=gitea
       - DEBUG=1
       - IS_CONTAINER=true
