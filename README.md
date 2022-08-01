@@ -114,7 +114,7 @@ services:
 | 变量名           | 默认值        | 说明                             |
 | ---------------- | ------------- | -------------------------------- |
 | EASYSOFT_DEBUG   | false         | 是否打开调试信息，默认关闭       |
-| APP_DOMAIN       | gitea.demo.haogs.cn | Gitea域名,影响仓库的地址 |
+| APP_DOMAIN       | https://modify.the.APP_DOMAIN.variable.in.docker-compose.yml | Gitea域名,必须设置|
 | MYSQL_HOST       | 127.0.0.1     | MySQL 主机地址                   |
 | MYSQL_PORT       | 3306          | MySQL 端口                       |
 | MYSQL_DB         | gitea          | spug 数据库名称                 |
