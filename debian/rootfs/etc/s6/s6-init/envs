@@ -3,7 +3,8 @@
 #===========#
 #  Gitea    #
 #===========#
-export APP_DOMAIN=${APP_DOMAIN:-https://type.your.domain.in.docker-compose.yml}
+export APP_DOMAIN=${APP_DOMAIN:-0.0.0.0:8080}
+export APP_PROTOCOL=${APP_PROTOCOL:-https}
 export DEFAULT_ADMIN_USERNAME=${DEFAULT_ADMIN_USERNAME:-gitea}
 export DEFAULT_ADMIN_PASSWORD=${DEFAULT_ADMIN_PASSWORD:-pass4Gitea}
 export GITEA_ADMIN_EMAIL=${GITEA_ADMIN_EMAIL:-admin@demo.com}

@@ -2,7 +2,8 @@
 | 变量名           | 默认值        | 说明                             |
 | ---------------- | ------------- | -------------------------------- |
 | EASYSOFT_DEBUG   | false         | 是否打开调试信息，默认关闭       |
-| APP_DOMAIN       | gitea.demo.haogs.cn | Gitea域名,影响仓库的地址 |
+| APP_DOMAIN       | 0.0.0.0:8080  | Gitea域名,影响访问与仓库的地址 |
+| APP_PROTOCOL     | https         | Gitea域名协议 |
 | MYSQL_HOST       | 127.0.0.1     | MySQL 主机地址                   |
 | MYSQL_PORT       | 3306          | MySQL 端口                       |
 | MYSQL_DB         | gitea          | spug 数据库名称                 |
