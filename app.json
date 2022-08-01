@@ -5,7 +5,7 @@
     "Maintainer": "zhouyq zhouyueqiu@easycorp.ltd",
     "GitUrl": "https://github.com/go-gitea/gitea",
     "DockerfileUrl": "https://github.com/quicklyon/gitea-docker",
-    "InstallDocUrl": "https://www.qucheng.com/app-install/install-gitea-<number>.html",
+    "InstallDocUrl": "https://www.qucheng.com/app-install/install-gitea-134.html",
     "Docker": {
         "Name": "gitea",
         "OS": "debian-11",

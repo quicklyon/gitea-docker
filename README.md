@@ -10,7 +10,7 @@
 
 ## 快速参考
 
-- 通过 [渠成软件百宝箱](https://www.qucheng.com/app-install/install-gitea-<number>.html) 一键安装 **Gitea**
+- 通过 [渠成软件百宝箱](https://www.qucheng.com/app-install/install-gitea-134.html) 一键安装 **Gitea**
 - [Dockerfile 源码](https://github.com/quicklyon/gitea-docker)
 - [Gitea 源码](https://github.com/go-gitea/gitea)
 - [Gitea 官网](https://gitea.io/)
