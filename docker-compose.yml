@@ -35,7 +35,7 @@ services:
       - DEFAULT_ADMIN_USERNAME=gitea
       - DEFAULT_ADMIN_PASSWORD=pass4Gitea
       - GITEA_ADMIN_EMAIL=you@email.com
-      - APP_DOMAIN=http://type.your.domain.com
+      - APP_DOMAIN=https://modify.the.APP_DOMAIN.variable.in.docker-compose.yml
       - MYSQL_DB=gitea
       - DEBUG=1
       - IS_CONTAINER=true

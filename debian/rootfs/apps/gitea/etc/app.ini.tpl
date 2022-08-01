@@ -33,7 +33,7 @@ DOMAIN           = {{APP_DOMAIN}}
 APP_DATA_PATH    = /data
 SSH_DOMAIN       = {{APP_DOMAIN}}
 HTTP_PORT        = 3000
-ROOT_URL         = https://{{APP_DOMAIN}}
+ROOT_URL         = {{APP_DOMAIN}}
 START_SSH_SERVER = false
 DISABLE_SSH      = true
 SSH_PORT         = 2222
@@ -41,10 +41,13 @@ LFS_START_SERVER = true
 LFS_JWT_SECRET   = {{GITEA_LFS_JWT_SECRET}}
 SSH_LISTEN_PORT  = 2222
 BUILTIN_SSH_SERVER_USER = git
-LFS_CONTENT_PATH = /data/lfs
 LANDING_PAGE	 = login
 REQUIRE_SIGNIN_VIEW = false
 OFFLINE_MODE     = true
+
+[lfs]
+STORAGE_TYPE = local
+PATH = /data/lfs
 
 [api]
 ENABLE_SWAGGER = false

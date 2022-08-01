@@ -3,7 +3,7 @@
 #===========#
 #  Gitea    #
 #===========#
-export APP_DOMAIN=${APP_DOMAIN:-gitea.demo.haogs.cn}
+export APP_DOMAIN=${APP_DOMAIN:-https://type.your.domain.in.docker-compose.yml}
 export DEFAULT_ADMIN_USERNAME=${DEFAULT_ADMIN_USERNAME:-gitea}
 export DEFAULT_ADMIN_PASSWORD=${DEFAULT_ADMIN_PASSWORD:-pass4Gitea}
 export GITEA_ADMIN_EMAIL=${GITEA_ADMIN_EMAIL:-admin@demo.com}
@@ -35,5 +35,6 @@ export PHP_PERSISTENCE_LIST=(
 "/data/log"
 "/data/repo"
 "/data/repo-avatars"
+"/data/tmp"
 "/data/tmp/local-repo"
 "/data/tmp/uploads")
