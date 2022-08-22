@@ -23,6 +23,9 @@ push-public: ## push 镜像到 hub.docker.com
 run: ## 运行
 	export TAG=$(TAG)-$(BUILD_DATE) ;docker-compose -f docker-compose.yml up -d
 
+smoke-test: ## 冒烟测试新版
+	hack/make-rules/smoke-test.sh "gitea" "run"
+
 ps: ## 运行状态
 	docker-compose -f docker-compose.yml ps
 

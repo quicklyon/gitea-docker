@@ -29,7 +29,7 @@
 
 由于版本比较多,这里只列出最新的5个版本,更详细的版本列表请参考:[可用版本列表]({{APP_DOCKER_HUB_TAG_URL}})
 
-{{SUPPORT_TAGS}}
+{{APP_DOCKER_TAG}}
 
 ## 三、获取镜像
 
@@ -95,3 +95,7 @@ docker-compose logs -f {{app_name}}
 {{MAKE_EXTRA_INFO}}
 - [VERSION]({{APP_DOCKERFILE_GIT_URL}}/blob/main/VERSION) 文件中详细的定义了Makefile可以操作的版本。
 - [docker-compose.yml]({{APP_DOCKERFILE_GIT_URL}}/blob/main/docker-compose.yml)。
+
+## 七、版本升级
+
+{{APP_UPDATE}}
