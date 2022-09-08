@@ -3,28 +3,23 @@
 # shellcheck disable=SC1091
 
 GITEA_URL="https://github.com/go-gitea/gitea"
-COS_URL="https://pkg.qucheng.com/files/stacksmith"
 
-MIRROR=${MIRROR:-false}
 VERSION=${1:?version is error}
 
-if [ "$MIRROR" == "false" ];then
-    base_name="releases/download/v$VERSION/gitea-$VERSION-linux-amd64"
-    directory="/apps/gitea/bin"
 
-    echo "Downloading gitea package"
-    [ ! -d $directory ] && mkdir -pv $directory
-    curl -L -k --output $directory/gitea --silent --show-error --fail  "${GITEA_URL}/${base_name}"
+base_name="releases/download/v$VERSION/gitea-$VERSION-linux-amd64"
+directory="/apps/gitea/bin"
 
-    package_sha256=$(curl -L -k -s "${GITEA_URL}/${base_name}.sha256" | awk '{print $1}')
+echo "Downloading gitea package"
+[ ! -d $directory ] && mkdir -pv $directory
+curl -L -k --output $directory/gitea --silent --show-error --fail  "${GITEA_URL}/${base_name}"
 
-    if [ -n "$package_sha256" ]; then
-        echo "Verifying package integrity"
-        echo "$package_sha256  $directory/gitea" | sha256sum -c - || exit "$?"
-    fi
-    chmod +x /apps/gitea/bin/gitea
-    upx -9 /apps/gitea/bin/gitea
-else
-    APP_SHA256="$(curl -k -s -L $COS_URL/gitea-"${VERSION}"-"${OS_NAME}"-"${OS_ARCH}".tar.gz.sha256 | awk '{print $1}')"
-    . /opt/easysoft/scripts/libcomponent.sh && component_unpack "gitea" "${VERSION}" -c "${APP_SHA256}"
+package_sha256=$(curl -L -k -s "${GITEA_URL}/${base_name}.sha256" | awk '{print $1}')
+
+if [ -n "$package_sha256" ]; then
+    echo "Verifying package integrity"
+    echo "$package_sha256  $directory/gitea" | sha256sum -c - || exit "$?"
 fi
+
+chmod +x /apps/gitea/bin/gitea
+upx -9 /apps/gitea/bin/gitea

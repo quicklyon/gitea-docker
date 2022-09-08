@@ -5,7 +5,7 @@ APP_NAME=$1
 ACTION=$2
 SUCCESS_STRING="登录 -  QuickOn platform gitea application."
 SERVICE_PORT=8080
-MAXWAIT=60
+MAXWAIT=180
 
 . debian/prebuildfs/opt/easysoft/scripts/liblog.sh
 
