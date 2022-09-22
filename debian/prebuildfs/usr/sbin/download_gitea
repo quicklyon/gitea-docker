@@ -5,7 +5,7 @@
 GITEA_URL="https://github.com/go-gitea/gitea"
 
 VERSION=${1:?version is error}
-
+package_sha256=${2:?sha is error}
 
 base_name="releases/download/v$VERSION/gitea-$VERSION-linux-amd64"
 directory="/apps/gitea/bin"
@@ -13,8 +13,6 @@ directory="/apps/gitea/bin"
 echo "Downloading gitea package"
 [ ! -d $directory ] && mkdir -pv $directory
 curl -L -k --output $directory/gitea --silent --show-error --fail  "${GITEA_URL}/${base_name}"
-
-package_sha256=$(curl -L -k -s "${GITEA_URL}/${base_name}.sha256" | awk '{print $1}')
 
 if [ -n "$package_sha256" ]; then
     echo "Verifying package integrity"

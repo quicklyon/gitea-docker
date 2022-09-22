@@ -1,16 +1,17 @@
 export APP_NAME=gitea
 export BUILD_DATE := $(shell date +'%Y%m%d')
-export VERSION := $(shell cat VERSION)
+export VERSION := $(shell grep ver VERSION|sed 's/^ver://g')
+export SHA256 := $(shell grep sha256 VERSION|sed 's/^sha256://g')
 export TAG := $(VERSION)-$(BUILD_DATE)
 
 help: ## this help
 	@awk 'BEGIN {FS = ":.*?## "} /^[a-zA-Z_-]+:.*?## / {sub("\\\\n",sprintf("\n%22c"," "), $$2);printf "\033[36m%-20s\033[0m %s\n", $$1, $$2}' $(MAKEFILE_LIST)
 
 build: ## 构建镜像
-	docker build --build-arg VERSION=$(VERSION) --build-arg IS_CHINA="true" -t hub.qucheng.com/app/$(APP_NAME):$(TAG) -f Dockerfile .
+	docker build  --build-arg VERSION=$(VERSION) --build-arg SHA256=$(SHA256) --build-arg IS_CHINA="true" -t hub.qucheng.com/app/$(APP_NAME):$(TAG) -f Dockerfile .
 
 build-public: ## 国外构建镜像
-	docker build --build-arg VERSION=$(VERSION) --build-arg IS_CHINA="false" -t hub.qucheng.com/app/$(APP_NAME):$(TAG) -f Dockerfile .
+	docker build --build-arg VERSION=$(VERSION) --build-arg SHA256=$(SHA256) --build-arg IS_CHINA="false" -t hub.qucheng.com/app/$(APP_NAME):$(TAG) -f Dockerfile .
 
 push: ## push 镜像到 hub.qucheng.com
 	docker push hub.qucheng.com/app/$(APP_NAME):$(TAG)

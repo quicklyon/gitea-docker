@@ -15,7 +15,7 @@ export LATEST_VER
 GITURL=$(jq -r .GitUrl app.json)
 export GITURL
 
-CURRENT_VER=$( cat VERSION)
+CURRENT_VER=$( grep ver VERSION |sed 's/ver://g')
 export CURRENT_VER
 
 # generate new version changelog
@@ -25,9 +25,12 @@ gen_changelog(){
   render-template .template/changelog.md.tpl > changelog/"${TODAY}".md && cat changelog/"${TODAY}".md
 }
 
+SHA256=$(curl -s -L -k "$GITURL"/releases/download/v"$LATEST_VER"/gitea-"$LATEST_VER"-linux-amd64.sha256|awk '{print $1}')
 
 if [ "$LATEST_VER" != "$CURRENT_VER" ];then
-  echo "$LATEST_VER" > VERSION
+  sed -i -r "s/(ver:)$CURRENT_VER/\1$LATEST_VER/g" VERSION
+  sed -i -r "s/(sha256:).*/\1$SHA256/g" VERSION
+
   warn "Gitea new version->$LATEST_VER was detected. Please rebuild the image."
   gen_changelog
 else
