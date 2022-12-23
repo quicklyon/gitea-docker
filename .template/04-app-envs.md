@@ -12,3 +12,4 @@
 | DEFAULT_ADMIN_USER| gitea        | 默认管理员名称             |
 | DEFAULT_ADMIN_PASSWORD | pass4Gitea | 默认管理员密码 |
 | GITEA_ADMIN_EMAIL | admin@demo.com | 管理员邮箱地址|
+| ENABLE_SWAGGER   | false         | 是否启动Swagger API页面|

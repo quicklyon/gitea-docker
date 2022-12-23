@@ -50,7 +50,7 @@ STORAGE_TYPE = local
 PATH = /data/lfs
 
 [api]
-ENABLE_SWAGGER = false
+ENABLE_SWAGGER = {{ENABLE_SWAGGER}}
 
 [picture]
 AVATAR_UPLOAD_PATH = /data/avatars

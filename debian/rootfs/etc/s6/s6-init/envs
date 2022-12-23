@@ -12,6 +12,7 @@ GITEA_SECRET_KEY="$(gitea generate secret SECRET_KEY)"
 GITEA_LFS_JWT_SECRET="$(gitea generate secret LFS_JWT_SECRET)"
 export GITEA_SECRET_KEY
 export GITEA_LFS_JWT_SECRET
+export ENABLE_SWAGGER=${ENABLE_SWAGGER:-false}
 
 #===========#
 #   MySQL   #
