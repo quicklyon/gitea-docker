@@ -92,3 +92,6 @@ NAMES = 简体中文
 
 [migrations]
 ALLOW_LOCALNETWORKS    = true
+
+[webhook]
+ALLOWED_HOST_LIST = {{ALLOWED_HOST_LIST}}
