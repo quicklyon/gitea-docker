@@ -13,3 +13,4 @@
 | DEFAULT_ADMIN_PASSWORD | pass4Gitea | 默认管理员密码 |
 | GITEA_ADMIN_EMAIL | admin@demo.com | 管理员邮箱地址|
 | ENABLE_SWAGGER   | false         | 是否启动Swagger API页面|
+| ALLOWED_HOST_LIST | *         | 信任的 Webhook 域名列表 |
