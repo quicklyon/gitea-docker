@@ -1,5 +1,6 @@
 <!-- 这里是应用的【Tag】信息，通过命令维护，详情参考：https://github.com/quicklyon/template-toolkit -->
-- [latest](https://github.com/go-gitea/gitea/releases/tag/v1.17.4)
+- [latest](https://github.com/go-gitea/gitea/releases/tag/v1.18.3)
+- [1.18.3-20230208](https://github.com/go-gitea/gitea/releases/tag/v1.18.3)
 - [1.17.4-20221223](https://github.com/go-gitea/gitea/releases/tag/v1.17.4)
 - [1.17.3-20221017](https://github.com/go-gitea/gitea/releases/tag/v1.17.3)
 - [1.17.2-20220908](https://github.com/go-gitea/gitea/releases/tag/v1.17.2)

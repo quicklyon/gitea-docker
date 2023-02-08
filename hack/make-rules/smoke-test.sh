@@ -3,7 +3,7 @@
 
 APP_NAME=$1
 ACTION=$2
-SUCCESS_STRING="登录 -  QuickOn platform gitea application."
+SUCCESS_STRING="登录 - QuickOn platform gitea application."
 SERVICE_PORT=8080
 MAXWAIT=180
 
@@ -30,7 +30,7 @@ for ((i = 1; i <= retries; i += 1)); do
     sleep 1
 
     if [ "$i" == "$retries" ]; then
-        error "$APP_NAME is unavailable after 30 seconds,please check."
+        error "$APP_NAME is unavailable after $MAXWAIT seconds,please check."
         return 1
     fi
 done
