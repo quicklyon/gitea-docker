@@ -1,7 +1,7 @@
 {{WARNING}}
 # QuickOn {{APP_NAME}} 应用镜像
 
-![GitHub Workflow Status (event)](https://img.shields.io/github/workflow/status/quicklyon/{{app_name}}-docker/build?style=flat-square)
+[![GitHub Workflow Status](https://github.com/quicklyon/{{app_name}}-docker/actions/workflows/docker.yml/badge.svg)](https://github.com/quicklyon/{{app_name}}/actions/workflows/docker.yml)
 ![Docker Pulls](https://img.shields.io/docker/pulls/easysoft/{{app_name}}?style=flat-square)
 ![Docker Image Size](https://img.shields.io/docker/image-size/easysoft/{{app_name}}?style=flat-square)
 ![GitHub tag](https://img.shields.io/github/v/tag/quicklyon/{{app_name}}-docker?style=flat-square)

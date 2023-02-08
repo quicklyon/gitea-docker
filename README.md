@@ -1,7 +1,7 @@
 <!-- 该文档是模板生成，手动修改的内容会被覆盖，详情参见：https://github.com/quicklyon/template-toolkit -->
 # QuickOn Gitea 应用镜像
 
-![GitHub Workflow Status (event)](https://img.shields.io/github/workflow/status/quicklyon/gitea-docker/build?style=flat-square)
+[![GitHub Workflow Status](https://github.com/quicklyon/gitea-docker/actions/workflows/docker.yml/badge.svg)](https://github.com/quicklyon/gitea/actions/workflows/docker.yml)
 ![Docker Pulls](https://img.shields.io/docker/pulls/easysoft/gitea?style=flat-square)
 ![Docker Image Size](https://img.shields.io/docker/image-size/easysoft/gitea?style=flat-square)
 ![GitHub tag](https://img.shields.io/github/v/tag/quicklyon/gitea-docker?style=flat-square)
