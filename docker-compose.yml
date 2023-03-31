@@ -23,6 +23,7 @@ services:
     container_name: gitea
     ports:
       - '8080:3000'
+      - '2222:22'
     volumes:
       - 'data:/data'
     depends_on:
@@ -35,7 +36,7 @@ services:
       - DEFAULT_ADMIN_USERNAME=gitea
       - DEFAULT_ADMIN_PASSWORD=pass4Gitea
       - GITEA_ADMIN_EMAIL=you@email.com
-      - APP_DOMAIN=0.0.0.0:8080
+      - APP_DOMAIN=git.example.com
       - APP_PROTOCOL=http
       - MYSQL_DB=gitea
       - DEBUG=1

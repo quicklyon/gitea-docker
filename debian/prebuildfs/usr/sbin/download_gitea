@@ -12,7 +12,7 @@ directory="/apps/gitea/bin"
 
 echo "Downloading gitea package"
 [ ! -d $directory ] && mkdir -pv $directory
-curl -L -k --output $directory/gitea --silent --show-error --fail  "${GITEA_URL}/${base_name}"
+curl -L -k --output $directory/gitea --silent --show-error --fail  "https://ghproxy.com/${GITEA_URL}/${base_name}"
 
 if [ -n "$package_sha256" ]; then
     echo "Verifying package integrity"

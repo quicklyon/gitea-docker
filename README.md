@@ -63,7 +63,8 @@ Chrome, Firefox, Safari, Edge
 由于版本比较多,这里只列出最新的5个版本,更详细的版本列表请参考:[可用版本列表](https://hub.docker.com/r/easysoft/gitea/tags/)
 
 <!-- 这里是应用的【Tag】信息，通过命令维护，详情参考：https://github.com/quicklyon/template-toolkit -->
-- [latest](https://github.com/go-gitea/gitea/releases/tag/v1.18.5)
+- [latest](https://github.com/go-gitea/gitea/releases/tag/v1.19.0)
+- [1.19.0-20230331](https://github.com/go-gitea/gitea/releases/tag/v1.19.0)
 - [1.18.5-20230313](https://github.com/go-gitea/gitea/releases/tag/v1.18.5)
 - [1.18.3-20230208](https://github.com/go-gitea/gitea/releases/tag/v1.18.3)
 - [1.17.4-20221223](https://github.com/go-gitea/gitea/releases/tag/v1.17.4)
@@ -122,6 +123,7 @@ services:
 | EASYSOFT_DEBUG   | false         | 是否打开调试信息，默认关闭       |
 | APP_DOMAIN       | 0.0.0.0:8080  | Gitea域名,影响访问与仓库的地址 |
 | APP_PROTOCOL     | https         | Gitea域名协议 |
+| DISABLE_SSH     | false         | 禁用SSH |
 | MYSQL_HOST       | 127.0.0.1     | MySQL 主机地址                   |
 | MYSQL_PORT       | 3306          | MySQL 端口                       |
 | MYSQL_DB         | gitea          | spug 数据库名称                 |

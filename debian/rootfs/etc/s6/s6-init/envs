@@ -14,6 +14,7 @@ export GITEA_SECRET_KEY
 export GITEA_LFS_JWT_SECRET
 export ENABLE_SWAGGER=${ENABLE_SWAGGER:-false}
 export ALLOWED_HOST_LIST=${ALLOWED_HOST_LIST:-*}
+export DISABLE_SSH=${DISABLE_SSH:-false}
 
 #===========#
 #   MySQL   #

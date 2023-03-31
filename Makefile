@@ -42,8 +42,7 @@ stop: ## 停服务
 restart: build clean ps ## 重构
 
 clean: stop ## 停服务
-	docker-compose -f docker-compose.yml down
-	docker volume prune -f
+	docker-compose -f docker-compose.yml down -v
 
 logs: ## 查看运行日志
 	docker-compose -f docker-compose.yml logs
