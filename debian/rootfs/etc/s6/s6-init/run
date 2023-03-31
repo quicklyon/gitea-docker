@@ -45,7 +45,7 @@ su-exec git gitea migrate --config $GITEA_APP_INI
 
 ISCREATED=$(su-exec git  gitea admin user list --admin --config ${GITEA_APP_INI} | wc -l)
 
-if [ "$ISCREATED" != "2" ];then
+if [ "$ISCREATED" == "1" ];then
     # Create admin user
     su-exec git gitea admin user create \
         --username "${DEFAULT_ADMIN_USERNAME}" \
