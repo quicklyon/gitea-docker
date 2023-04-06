@@ -89,8 +89,8 @@ ENABLE_SITEMAP = false
 ENABLE_FEED = false
 
 [i18n]
-LANGS = zh-CN
-NAMES = 简体中文
+LANGS = zh-CN,en-US,zh-HK,zh-TW
+NAMES = 简体中文,English,繁體中文（香港）,繁體中文（台灣）
 
 [migrations]
 ALLOW_LOCALNETWORKS    = true
