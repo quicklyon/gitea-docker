@@ -22,8 +22,8 @@ services:
     image: hub.qucheng.com/app/gitea:${TAG}
     container_name: gitea
     ports:
-      - '8080:3000'
-      - '2222:22'
+      - '80:3000'
+      - '22:2222'
     volumes:
       - 'data:/data'
     depends_on:
