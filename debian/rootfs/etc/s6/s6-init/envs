@@ -25,6 +25,14 @@ export MYSQL_DB=${MYSQL_DB:-gitea}
 export MYSQL_USER=${MYSQL_USER:-root}
 export MYSQL_PASSWORD=${MYSQL_PASSWORD:-pass4QuickOn}
 
+#===========#
+#   Mail   #
+#===========#
+export MAIL_ENABLED=${MAIL_ENABLED:-false}
+export SMTP_HOST=${SMTP_HOST:-localhost}
+export SMTP_PORT=${SMTP_PORT:-25}
+export SMTP_USER=${SMTP_USER:-"admin@localhost"}
+export SMTP_PASS=${SMTP_PASS:-""}
 
 # ======================#
 # Persistence directory #

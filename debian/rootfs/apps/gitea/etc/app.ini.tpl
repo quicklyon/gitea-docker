@@ -67,6 +67,14 @@ REQUIRE_SIGNIN_VIEW  = true
 DEFAULT_USER_VISIBILITY  = private
 DEFAULT_ORG_VISIBILITY   = private
 
+[mailer]
+ENABLED   = {{MAIL_ENABLED}}
+SMTP_ADDR = {{SMTP_HOST}}
+SMTP_PORT = {{SMTP_PORT}}
+FROM      = {{SMTP_USER}}
+USER      = {{SMTP_USER}}
+PASSWD    = {{SMTP_PASS}}
+
 [openid]
 ENABLE_OPENID_SIGNIN = false
 ENABLE_OPENID_SIGNUP = false
@@ -77,7 +85,7 @@ PROVIDER_CONFIG = /data/sessions
 
 [log]
 MODE      = console
-LEVEL     = info
+LEVEL     = {{LOG_LEVEL}}
 ROOT_PATH = /data/log
 ROUTER    = console
 

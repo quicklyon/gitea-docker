@@ -14,3 +14,8 @@
 | GITEA_ADMIN_EMAIL | admin@demo.com | 管理员邮箱地址|
 | ENABLE_SWAGGER   | false         | 是否启动Swagger API页面|
 | ALLOWED_HOST_LIST | *         | 信任的 Webhook 域名列表 |
+| MAIL_ENABLED | false        | 是否启用邮箱功能 |
+| SMTP_HOST | mail.demo.com        | 邮箱地址 |
+| SMTP_PORT | 465        | 邮箱端口 |
+| SMTP_USER | gitea@demo.com        | 邮箱发送账号 |
+| SMTP_PASS | mail4Gitea        | 邮箱发送账号密码 |

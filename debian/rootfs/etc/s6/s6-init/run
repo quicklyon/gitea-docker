@@ -35,6 +35,10 @@ done
 #=====================#
 #   Prepare Gitea     #
 #=====================#
+export LOG_LEVEL="Info"
+if [ -n "${DEBUG:+1}" ];then
+  export LOG_LEVEL="debug"
+fi
 GITEA_APP_INI="/apps/gitea/etc/app.ini"
 info "Render gitea config with envionment variables."
 su-exec git /usr/bin/render-template ${GITEA_APP_INI}.tpl > $GITEA_APP_INI
