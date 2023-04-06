@@ -19,3 +19,6 @@
 | SMTP_PORT | 465        | 邮箱端口 |
 | SMTP_USER | gitea@demo.com        | 邮箱发送账号 |
 | SMTP_PASS | mail4Gitea        | 邮箱发送账号密码 |
+| SSH_LISTEN_PORT | 22        | 默认监听22 |
+| START_SSH_SERVER | false        | 默认不开启ssh |
+| DISABLE_SSH | false        | 默认不禁用ssh |
