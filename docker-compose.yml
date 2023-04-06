@@ -41,6 +41,11 @@ services:
       - MYSQL_DB=gitea
       - DEBUG=1
       - IS_CONTAINER=true
+      - MAIL_ENABLED=false
+      - SMTP_HOST=smtp.example.com
+      - SMTP_PORT=465
+      - SMTP_USER="send@example.com"
+      - SMTP_PASS="password"
     networks:
       - net
 
