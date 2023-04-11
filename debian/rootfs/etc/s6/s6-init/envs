@@ -35,6 +35,7 @@ export SMTP_HOST=${SMTP_HOST:-localhost}
 export SMTP_PORT=${SMTP_PORT:-25}
 export SMTP_USER=${SMTP_USER:-"admin@localhost"}
 export SMTP_PASS=${SMTP_PASS:-""}
+export FORCE_TRUST_SERVER_CERT=${FORCE_TRUST_SERVER_CERT:-false}
 
 # ======================#
 # Persistence directory #
