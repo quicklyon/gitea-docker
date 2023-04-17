@@ -63,8 +63,9 @@ Chrome, Firefox, Safari, Edge
 由于版本比较多,这里只列出最新的5个版本,更详细的版本列表请参考:[可用版本列表](https://hub.docker.com/r/easysoft/gitea/tags/)
 
 <!-- 这里是应用的【Tag】信息，通过命令维护，详情参考：https://github.com/quicklyon/template-toolkit -->
-- [latest](https://github.com/go-gitea/gitea/releases/tag/v1.19.0)
-- [1.19.0-20230331](https://github.com/go-gitea/gitea/releases/tag/v1.19.0)
+- [latest](https://github.com/go-gitea/gitea/releases/tag/v1.19.1)
+- [1.19.1-20230417](https://github.com/go-gitea/gitea/releases/tag/v1.19.1)
+- [1.19.0-20230411](https://github.com/go-gitea/gitea/releases/tag/v1.19.0)
 - [1.18.5-20230313](https://github.com/go-gitea/gitea/releases/tag/v1.18.5)
 - [1.18.3-20230208](https://github.com/go-gitea/gitea/releases/tag/v1.18.3)
 - [1.17.4-20221223](https://github.com/go-gitea/gitea/releases/tag/v1.17.4)
@@ -123,7 +124,6 @@ services:
 | EASYSOFT_DEBUG   | false         | 是否打开调试信息，默认关闭       |
 | APP_DOMAIN       | 0.0.0.0:8080  | Gitea域名,影响访问与仓库的地址 |
 | APP_PROTOCOL     | https         | Gitea域名协议 |
-| DISABLE_SSH     | false         | 禁用SSH |
 | MYSQL_HOST       | 127.0.0.1     | MySQL 主机地址                   |
 | MYSQL_PORT       | 3306          | MySQL 端口                       |
 | MYSQL_DB         | gitea          | spug 数据库名称                 |
@@ -134,6 +134,14 @@ services:
 | GITEA_ADMIN_EMAIL | admin@demo.com | 管理员邮箱地址|
 | ENABLE_SWAGGER   | false         | 是否启动Swagger API页面|
 | ALLOWED_HOST_LIST | *         | 信任的 Webhook 域名列表 |
+| MAIL_ENABLED | false        | 是否启用邮箱功能 |
+| SMTP_HOST | mail.demo.com        | 邮箱地址 |
+| SMTP_PORT | 465        | 邮箱端口 |
+| SMTP_USER | gitea@demo.com        | 邮箱发送账号 |
+| SMTP_PASS | mail4Gitea        | 邮箱发送账号密码 |
+| SSH_LISTEN_PORT | 22        | 默认监听22 |
+| START_SSH_SERVER | false        | 默认不开启ssh |
+| DISABLE_SSH | false        | 默认不禁用ssh |
 
 ## 六、运行
 
