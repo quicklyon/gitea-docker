@@ -39,6 +39,25 @@ export LOG_LEVEL="Info"
 if [ -n "${DEBUG:+1}" ];then
   export LOG_LEVEL="debug"
 fi
+
+# Persistence SECRET_KEY and LFS_JWT_SECRET
+SECRET_KEY_FILE="/data/.SECRET_KEY"
+LFS_JWT_SECRET="/data/.LFS_JWT_SECRET"
+ 
+if [ ! -f $SECRET_KEY_FILE ] || [ ! -s $SECRET_KEY_FILE ];then
+  gitea generate secret SECRET_KEY > $SECRET_KEY_FILE
+fi
+  
+if [ ! -f $LFS_JWT_SECRET ] || [ ! -s $LFS_JWT_SECRET ] ;then
+  gitea generate secret LFS_JWT_SECRET > $LFS_JWT_SECRET
+fi
+
+GITEA_SECRET_KEY=$(cat $SECRET_KEY_FILE)
+GITEA_LFS_JWT_SECRET=$(cat $LFS_JWT_SECRET)
+export GITEA_SECRET_KEY
+export GITEA_LFS_JWT_SECRET
+
+# Render app.ini
 GITEA_APP_INI="/apps/gitea/etc/app.ini"
 info "Render gitea config with envionment variables."
 su-exec git /usr/bin/render-template ${GITEA_APP_INI}.tpl > $GITEA_APP_INI
