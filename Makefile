@@ -17,13 +17,16 @@ push: ## push 镜像到 hub.qucheng.com
 	docker push hub.qucheng.com/app/$(APP_NAME):$(TAG)
 
 push-public: ## push 镜像到 hub.docker.com
+	docker tag hub.qucheng.com/app/$(APP_NAME):$(TAG) easysoft/$(APP_NAME):$(VERSION)
 	docker tag hub.qucheng.com/app/$(APP_NAME):$(TAG) easysoft/$(APP_NAME):$(TAG)
-	docker tag easysoft/$(APP_NAME):$(TAG) easysoft/$(APP_NAME):latest
+	docker tag hub.qucheng.com/app/$(APP_NAME):$(TAG) easysoft/$(APP_NAME):latest
 	docker push easysoft/$(APP_NAME):$(TAG)
+	docker push easysoft/$(APP_NAME):$(VERSION)
 	docker push easysoft/$(APP_NAME):latest
 
 push-sync-tcr: push-public ## 同步到腾讯镜像仓库
 	curl http://i.haogs.cn:3839/sync?image=easysoft/$(APP_NAME):$(TAG)
+	curl http://i.haogs.cn:3839/sync?image=easysoft/$(APP_NAME):$(VERSION)
 	curl http://i.haogs.cn:3839/sync?image=easysoft/$(APP_NAME):latest
 
 run: ## 运行
