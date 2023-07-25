@@ -88,10 +88,8 @@ PROVIDER_CONFIG = /data/sessions
 MODE      = console
 LEVEL     = {{LOG_LEVEL}}
 ROOT_PATH = /data/log
-ROUTER    = console
 
 [other]
-SHOW_FOOTER_BRANDING = false
 SHOW_FOOTER_VERSION = false
 SHOW_FOOTER_TEMPLATE_LOAD_TIME = false
 ENABLE_SITEMAP = false
