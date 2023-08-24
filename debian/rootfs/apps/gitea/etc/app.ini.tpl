@@ -15,7 +15,7 @@ NAME    = {{MYSQL_DB}}
 USER    = {{MYSQL_USER}}
 PASSWD  = {{MYSQL_PASSWORD}}
 SSL_MODE = disable
-CHARSET  = utf8
+CHARSET  = utf8mb4
 LOG_SQL  = false
 
 [repository]

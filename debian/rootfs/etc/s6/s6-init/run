@@ -43,11 +43,11 @@ fi
 # Persistence SECRET_KEY and LFS_JWT_SECRET
 SECRET_KEY_FILE="/data/.SECRET_KEY"
 LFS_JWT_SECRET="/data/.LFS_JWT_SECRET"
- 
+
 if [ ! -f $SECRET_KEY_FILE ] || [ ! -s $SECRET_KEY_FILE ];then
   gitea generate secret SECRET_KEY > $SECRET_KEY_FILE
 fi
-  
+
 if [ ! -f $LFS_JWT_SECRET ] || [ ! -s $LFS_JWT_SECRET ] ;then
   gitea generate secret LFS_JWT_SECRET > $LFS_JWT_SECRET
 fi
@@ -66,10 +66,19 @@ owned_by "$GITEA_APP_INI" "git"
 # Prepare database
 su-exec git gitea migrate --config $GITEA_APP_INI
 
-# Deprecated 1.20.1  database mysql charset utf8 support, please use utf8mb4 and convert utf8 database to utf8mb4
-ISCREATED=$(su-exec git  gitea admin user list --admin --config ${GITEA_APP_INI} | grep Deprecated | wc -l)
+# just for debug
+sleep ${PAUSE:-0}
 
-if [ "$ISCREATED" == "1" ];then
+# Deprecated 1.20.1  database mysql charset utf8 support, please use utf8mb4 and convert utf8 database to utf8mb4
+deprecatedCheckRes=$(su-exec git  gitea admin user list --admin --config ${GITEA_APP_INI} | grep -q Deprecated && echo 1 || echo 0)
+if [ "$deprecatedCheckRes" == "1" ];then
+    info "deprecated check: please use utf8mb4 and convert utf8 database to utf8mb4"
+    su-exec git gitea convert --config ${GITEA_APP_INI}
+fi
+
+# Check if admin user is created
+ISCREATED=$(mysql -u$MYSQL_USER -p$MYSQL_PASSWORD -h$MYSQL_HOST $MYSQL_DB -e 'select count(1) from user where is_admin=1;' | sed 1d )
+if [ "$ISCREATED" == "0" ];then
     # Create admin user
     su-exec git gitea admin user create \
         --username "${DEFAULT_ADMIN_USERNAME}" \
