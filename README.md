@@ -63,12 +63,11 @@ Chrome, Firefox, Safari, Edge
 由于版本比较多,这里只列出最新的5个版本,更详细的版本列表请参考:[可用版本列表](https://hub.docker.com/r/easysoft/gitea/tags/)
 
 <!-- 这里是应用的【Tag】信息，通过命令维护，详情参考：https://github.com/quicklyon/template-toolkit -->
-- [latest,1.21.2,1.21.2-20231213](https://github.com/go-gitea/gitea/releases/tag/v1.21.2)
+- [latest,1.21.3,1.21.3-20231222](https://github.com/go-gitea/gitea/releases/tag/v1.21.3)
 - [1.20.4,1.20.4-20230914](https://github.com/go-gitea/gitea/releases/tag/v1.20.4)
 - [1.19.4,1.19.4-20230706](https://github.com/go-gitea/gitea/releases/tag/v1.19.4)
 - [1.18.5-20230313](https://github.com/go-gitea/gitea/releases/tag/v1.18.5)
 - [1.17.4-20221223](https://github.com/go-gitea/gitea/releases/tag/v1.17.4)
-- [1.16.9-20220730](https://github.com/go-gitea/gitea/releases/tag/v1.16.9)
 
 ## 三、获取镜像
 
